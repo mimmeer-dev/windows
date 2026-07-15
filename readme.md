@@ -12,11 +12,10 @@
 
 </div></h1>
 
-Windows inside a Docker container.
+Windows inside a GitHub CodeSpace
 
 ## Features ✨
 
-- Runs Windows inside a Docker container
 - Automatic download and hands-free installation
 - Supports modern and legacy Windows releases
 - Near-native performance with KVM acceleration
@@ -24,66 +23,10 @@ Windows inside a Docker container.
 - Dynamic memory allocation with memory ballooning
 - USB passthrough and host folder sharing
 - Supports NAT, user-mode, macvlan, and macvtap networking
+## Ideal Specs ⚙️
 
-## Video 📺
-
-[![YouTube](https://img.youtube.com/vi/xhGYobuG508/maxresdefault.jpg)](https://www.youtube.com/watch?v=xhGYobuG508)
-
-## Usage 🐳
-
-##### Docker Compose:
-
-```yaml
-services:
-  windows:
-    image: dockurr/windows
-    container_name: windows
-    environment:
-      VERSION: "11"
-    devices:
-      - /dev/kvm
-      - /dev/net/tun
-    cap_add:
-      - NET_ADMIN
-    ports:
-      - 8006:8006
-      - 3389:3389/tcp
-      - 3389:3389/udp
-    volumes:
-      - ./windows:/storage
-    restart: always
-    stop_grace_period: 2m
-```
-
-##### Docker CLI:
-
-```bash
-docker run -it --rm --name windows -e "VERSION=11" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
-```
-
-##### Kubernetes:
-
-```shell
-kubectl apply -f https://raw.githubusercontent.com/dockur/windows/refs/heads/master/kubernetes.yml
-```
-
-##### GitHub Codespaces:
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dockur/windows)
-
-##### Graphical installer:
-
-[![Download WinBoat](https://github.com/dockur/windows/raw/master/.github/winboat.png)](https://winboat.app)
-
-## Requirements ⚙️
-
-- Docker or Podman on a Linux host with KVM support.
-- Docker Desktop or Podman (Desktop) on Windows 11 with nested virtualization enabled.
 - At least 4 GB of available RAM.
 - At least 64 GB of free disk space.
-
-> [!NOTE]
-> Docker Desktop on Linux, macOS, and Windows 10 does not currently provide KVM access to containers and is therefore not supported.
 
 ## FAQ 💬
 
