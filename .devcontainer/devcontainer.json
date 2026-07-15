@@ -1,10 +1,12 @@
 {
-  "name": "Windows 11 Pro",
+  "name": "Windows 10 LTSC",
   "service": "windows",
   "containerEnv": {
-    "VERSION": "11"
+    "VERSION": "10l",
+    "USERNAME": "Administrator",
+    "PASSWORD": ""
   },
-  "forwardPorts": [8006],
+  "forwardPorts": [8006],  
   "portsAttributes": {
     "8006": {
       "label": "Web",
@@ -13,7 +15,7 @@
   },
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
-  },
-  "dockerComposeFile": "codespaces.yml",
+  }, 
+  "dockerComposeFile": "../codespaces.yml",
   "initializeCommand": "docker system prune --all --force"
 }
