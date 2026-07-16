@@ -26,6 +26,6 @@
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
   }, 
-  "dockerComposeFile": "../codespaces.yml",
+  "dockerComposeFile": "codespaces.yml", // why did this not be default
   "initializeCommand": "docker system prune --all --force"
 }
