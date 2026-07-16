@@ -2,8 +2,6 @@
   "name": "Windows 10 LTSC",
   "service": "windows",
   "runArgs": [
-    "--device=/dev/kvm",
-    "--device=/dev/net/tun",
     "--cap-add=NET_ADMIN",
     "--stop-timeout=120",
     // Mounts the workspace's `./windows` folder to `/storage` to persist your data!
