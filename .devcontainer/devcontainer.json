@@ -1,13 +1,6 @@
 {
   "name": "Windows 10 LTSC",
-  
-  // Uses the official Dockur image from GHCR
-  "image": "ghcr.io/dockur/windows",
-
-  // Runs cleanup before setting up to maximize available Codespace disk space
-  "postCreateCommand": "docker system prune --all --force || true",
-
-  // Translates the "devices", "cap_add", and "volumes" from the Compose file
+  "service": "windows",
   "runArgs": [
     "--device=/dev/kvm",
     "--device=/dev/net/tun",
@@ -16,28 +9,22 @@
     // Mounts the workspace's `./windows` folder to `/storage` to persist your data!
     "--volume=${localWorkspaceFolder}/windows:/storage"
   ],
-
-  // Expose the Web desktop (VNC) and RDP ports
-  "forwardPorts": [8006, 3389],
-
-  "portsAttributes": {
-    "8006": {
-      "label": "Web Desktop",
-      "onAutoForward": "openBrowser"
-    },
-    "3389": {
-      "label": "RDP",
-      "onAutoForward": "ignore"
-    }
-  },
-
-  // Using the dynamic settings from the default Compose file!
+  "overrideCommand": false,
   "containerEnv": {
     "VERSION": "10l",
-    "RAM_SIZE": "half",
-    "CPU_CORES": "max",
-    "DISK_SIZE": "max",
     "USERNAME": "Administrator",
     "PASSWORD": ""
-  }
+  },
+  "forwardPorts": [8006],  
+  "portsAttributes": {
+    "8006": {
+      "label": "Web",
+      "onAutoForward": "notify"
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  }, 
+  "dockerComposeFile": "../codespaces.yml",
+  "initializeCommand": "docker system prune --all --force"
 }
