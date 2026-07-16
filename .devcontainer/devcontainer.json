@@ -12,8 +12,10 @@
     "VERSION": "10l",
     "USERNAME": "Administrator",
     "PASSWORD": "",
-    "DHCP": "yes",
-    "KVM": "N"
+    "KVM": "N",             // Software emulation mode (KVM is not available on Codespaces)
+    "RAM_SIZE": "2G",       // Lowers RAM usage so Codespaces doesn't crash from Out-of-Memory
+    "CPU_CORES": "1",       // Keeps CPU footprint tiny during initial setup
+    "DHCP": "no"            // Turn off DHCP helper scripts to avoid needing NET_ADMIN
   },
   "forwardPorts": [8006],  
   "portsAttributes": {
