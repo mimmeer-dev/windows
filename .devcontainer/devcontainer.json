@@ -13,8 +13,8 @@
     "USERNAME": "Administrator",
     "PASSWORD": "",
     "KVM": "N",             // Software emulation mode (KVM is not available on Codespaces)
-    "RAM_SIZE": "2G",       // Lowers RAM usage so Codespaces doesn't crash from Out-of-Memory
-    "CPU_CORES": "1",       // Keeps CPU footprint tiny during initial setup
+    "RAM_SIZE": "10G",       // Lowers RAM usage so Codespaces doesn't crash from Out-of-Memory
+    "CPU_CORES": "3",
     "DHCP": "no"            // Turn off DHCP helper scripts to avoid needing NET_ADMIN
   },
   "forwardPorts": [8006],  
