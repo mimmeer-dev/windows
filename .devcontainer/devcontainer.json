@@ -12,7 +12,8 @@
     "VERSION": "10l",
     "USERNAME": "Administrator",
     "PASSWORD": "",
-    "DHCP": "yes"
+    "DHCP": "yes",
+    "KVM": "N"
   },
   "forwardPorts": [8006],  
   "portsAttributes": {
