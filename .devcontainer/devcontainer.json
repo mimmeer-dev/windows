@@ -13,7 +13,8 @@
   "containerEnv": {
     "VERSION": "10l",
     "USERNAME": "Administrator",
-    "PASSWORD": ""
+    "PASSWORD": "",
+    "DHCP": "yes"
   },
   "forwardPorts": [8006],  
   "portsAttributes": {
