@@ -7,8 +7,6 @@ services:
       DISK_SIZE: "max"
       CPU_CORES: "max"
       DHCP: "yes"
-
-    network_mode: bridge
     devices:
       - /dev/kvm
       - /dev/net/tun
